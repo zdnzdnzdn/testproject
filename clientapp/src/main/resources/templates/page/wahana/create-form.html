@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html
+    lang="en"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/index}">
+<head>
+    <title>Kelola Wahana - E-TickPark</title>
+</head>
+<body>
+
+    <!-- Content -->
+    <section class="container" layout:fragment="content">
+        <div class="card mt-5">
+            <h5 class="card-header fw-bold text-center">Create Wahana</h5>
+            <div class="card-body">
+                <form class="row g-3 mt-4" th:action="@{/wahana}" th:method="POST" th:object="${wahana}" enctype="multipart/form-data">
+                    
+                    <div class="mb-1">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" placeholder="Nama" th:field="*{nama}">
+                    </div>
+                    
+                    <div class="mb-1">
+                        <label for="keterangan" class="form-label">Keterangan</label>
+                        <input type="text" class="form-control" id="keterangan" placeholder="Keterangan" th:field="*{keterangan}">
+                    </div>
+                    
+                    <div class="mb-1">
+                        <label for="harga" class="form-label">Harga</label>
+                        <input type="number" class="form-control" id="harga" placeholder="Harga" th:field="*{harga}">
+                    </div>
+
+                    <div class="mb-1">
+                        <label for="gambar" class="form-label">Gambar Wahana</label>
+                        <input class="form-control" type="file" id="gambar" accept=".jpg,.jpeg,.png" th:field="*{gambar}">
+                    </div>
+  
+                    <div class="mt-3 d-flex gap-2">
+                        <button type="submit" class="btn btn-success btn-sm fw-bold">
+                            Create
+                        </button>
+                        <a href="/wahana" class="btn btn-secondary btn-sm fw-bold">
+                            Back
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

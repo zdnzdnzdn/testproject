@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html
+    lang="en"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/index}">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <!-- Content -->
+    <section class="d-flex justify-content-center my-4" layout:fragment="content">
+        <div class="card p-3" style="width: 35%;">
+            <div class="card-body">
+              <p class="card-text fw-bold mb-4 text-center">Registration Form</p>
+    
+              <form th:action="@{/register}" th:method="POST" class="row g-3 mt-4" th:object="${register}">
+
+                <div class="mb-1">
+                    <label for="nama" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="nama" placeholder="Your name" th:field="*{nama}">
+                </div>
+
+                <div class="mb-1">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your email" th:field="*{email}">
+                </div>
+
+                <div class="mb-1">
+                    <label for="telepon" class="form-label">Number Phone</label>
+                    <input type="text" class="form-control" id="telepon" placeholder="Your number phone" th:field="*{telepon}">
+                </div>
+
+                <div class="mb-1">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Username" th:field="*{username}">
+                </div>
+
+                <div class="mb-1">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="New Password" th:field="*{password}">
+                </div>
+    
+                <div class="col text-center">
+                  <button type="submit" class="btn btn-primary mb-3 text-center" style="width: 50%;">Submit</button>
+                </div>
+              </form>
+              <p class="card-text mt-3 text-center">Have an account? <a href="/login">Login</a></p>
+            </div>
+          </div>
+    </section>
+</body>
+</html>

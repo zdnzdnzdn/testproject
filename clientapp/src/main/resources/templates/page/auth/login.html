@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html
+    lang="en"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/index}">
+<head>
+    <title>Login</title>
+</head>
+<body>
+
+  <body>
+    <div class="p-3 mb-2 bg-info-subtle text-info-emphasis">.bg-info-subtle</div>
+    <!-- Content -->
+    <section class="d-flex justify-content-center my-5" layout:fragment="content">
+        <div class="card p-3" style="width: 35%;">
+            <div class="card-body">
+              <p class="card-text text-center fw-bold mb-4">Welcome</p>
+                <h7><center>Fill the form to login</center></h7>
+              <form th:action="@{/login}" th:method="POST" class="row g-3 mt-4" th:object="${login}">
+                
+                <div class="mb-1">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter your username" th:field="*{username}">
+                </div>
+
+                <div class="mb-1">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" th:field="*{password}">
+                </div>
+    
+                <div class="col text-center">
+                  <button type="submit" class="btn btn-primary mb-3" style="width: 50%;">Login</button>
+                </div>
+              </form>
+              
+              <p class="card-text mt-3 text-center">Need an account? <a href="/register">Sign Up</a></p>
+            </div>
+          </div>
+    </section>
+</body>
+</body>
+</html>
